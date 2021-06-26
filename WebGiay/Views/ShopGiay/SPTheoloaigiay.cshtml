@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebGiay.Models.GIAY>
+@{
+    ViewBag.Title = "SPTheoloaigiay";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<h3 style="text-align:center; color:red">GIÀY THEO LOẠI</h3>
+<div class="container">
+    <div class="row">
+        @foreach (var giay in Model)
+        {
+        <div id="products">
+            <div class="item">
+                <a href="@Url.Action("Details","ShopGiay", new { id = giay.Magiay})">
+                    <img alt="@giay.Tengiay" src="~/images/@giay.Anhbia" width="200" />
+
+                    <br />
+                    <h4 style="text-align:right">
+                        @giay.Giaban
+                    </h4>
+                    <h4 style="text-align:center">
+                        @giay.Tengiay
+                    </h4>
+                    <p></p>
+</div>
+
+
+        </div>
+
+
+        }
+    </div>
+    </div>
+
+    @*<div class="container">
+            <div class="row">
+                @foreach (var giay in Model)
+                {
+                    <div id="products">
+                        <div class="item">
+                            <a href="@Url.Action("Details", "ShopGiay", new { id = giay.Magiay })">
+                                <img alt="@giay.Tengiay" src="~/images/@giay.Anhbia" width="200" />
+                                <h4 style="text-align:right">
+                                    @giay.Giaban
+                                </h4>
+                                <h4 style="text-align:center">
+                                    @giay.Tengiay
+                                </h4>
+
+                        </div>
+
+
+                    </div>
+                }
+            </div>
+        </div>*@

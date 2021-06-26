@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <title>shop giay</title>
+    <link rel="stylesheet" href="~/Content/Style.css" />
+
+
+
+</head>
+<body>
+
+
+
+
+    <div id="container">
+        <div id="banner">
+            <div id="logo">
+                <img src="~/images/lg.png" width="180" />
+            </div>
+            <div id="menutop">
+                <p>@Html.ActionLink("TRANG CHỦ", "Index", "Admin")</p>
+                <p>
+                    @Html.ActionLink("Quản lý loại giày", "Sanpham", "Admin")
+                </p>
+                <p>
+                    @Html.ActionLink("Quản lý kiểu giày", "Congty", "Admin")
+                </p>
+
+                <p>
+                    @Html.ActionLink("Quản lý giày", "Giày", "Admin")
+                </p>
+                <p>
+           
+
+
+            </div>
+        </div>
+     <div class="container">
+         <div>
+             @RenderBody();
+         </div>
+     </div>
+
+        <div class="clear"></div>
+
+
+        <div id="footer">
+           <p>Design by rovel</p>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

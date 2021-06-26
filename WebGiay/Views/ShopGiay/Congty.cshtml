@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebGiay.Models.CONGTY>
+
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheoCT","ShopGiay",new { id = item.MaCT})" class="list-group-item">
+            @item.TenCT
+        </a>
+    }
+
+
+</div>
+
