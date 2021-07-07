@@ -72,7 +72,6 @@ C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\System.Web.WebPages.Razor.xml
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\Newtonsoft.Json.xml
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\Antlr3.Runtime.pdb
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\obj\Debug\WebGiay.csproj.AssemblyReference.cache
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\obj\Debug\WebGiay.csproj.CoreCompileInputs.cache
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\obj\Debug\WebGiay.csproj.CopyComplete
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\obj\Debug\WebGiay.dll
@@ -81,3 +80,7 @@ C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\PagedList.dll
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\PagedList.Mvc.dll
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\PagedList.xml
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\PagedList.Mvc.xml
+C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.dll
+C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.SqlServer.dll
+C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.xml
+C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.SqlServer.xml

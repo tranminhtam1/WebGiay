@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -56,6 +62,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -131,16 +139,24 @@
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShopGiayController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbQLBanGiay.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbQLBanGiay.dbml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\CHITIETDONTHANG.cs" />
+    <Compile Include="Models\CONGTY.cs" />
+    <Compile Include="Models\dbQLBanGiayDataContext.cs" />
+    <Compile Include="Models\DONDATHANG.cs" />
+    <Compile Include="Models\GIAY.cs" />
     <Compile Include="Models\Giohang.cs" />
+    <Compile Include="Models\KHACHHANG.cs" />
+    <Compile Include="Models\LOAIGIAY.cs" />
+    <Compile Include="Models\NHATHIETKE.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\THIETKEGIAY.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +176,7 @@
     <Content Include="images\3.png" />
     <Content Include="images\7.png" />
     <Content Include="images\8.png" />
+    <Content Include="images\add.png" />
     <Content Include="images\CC1.jpg" />
     <Content Include="images\CC2.jpg" />
     <Content Include="images\CC3.jpg" />
@@ -221,14 +238,6 @@
     <Content Include="images\vyesterday.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\dbQLBanGiay.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbQLBanGiay.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Models\dbQLBanGiay.dbml.layout">
-      <DependentUpon>dbQLBanGiay.dbml</DependentUpon>
-    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -240,6 +249,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\scripts.js" />
     <Content Include="Views\Shared\index1.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -271,6 +281,11 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Giohang\DatHang.cshtml" />
     <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

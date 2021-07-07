@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -74,8 +75,8 @@ namespace WebGiay.Controllers
                 kh.Ngaysinh = DateTime.Parse(ngaysinh);
 
 
-                data.KHACHHANGs.InsertOnSubmit(kh);
-                data.SubmitChanges();
+                data.KHACHHANGs.AddOrUpdate(kh);
+                data.SaveChanges();
                 return RedirectToAction("Dangnhap");
             }
             return this.Dangky();

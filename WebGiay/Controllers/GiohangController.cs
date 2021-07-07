@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -139,8 +140,8 @@ namespace WebGiay.Controllers
             ddh.Ngaygiao = DateTime.Parse(ngaygiao);
             ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = false;
-            data.DONDATHANGs.InsertOnSubmit(ddh);
-            data.SubmitChanges();
+            data.DONDATHANGs.AddOrUpdate(ddh);
+            data.SaveChanges();
             foreach (var item in gh)
             {
                 CHITIETDONTHANG ctdh = new CHITIETDONTHANG();
@@ -148,9 +149,9 @@ namespace WebGiay.Controllers
                 ctdh.Magiay = item.iMagiay;
                 ctdh.Soluong = item.iSoluong;
                 ctdh.Dongia = (decimal)item.dDongia;
-                data.CHITIETDONTHANGs.InsertOnSubmit(ctdh);
+                data.CHITIETDONTHANGs.AddOrUpdate(ctdh);
             }
-            data.SubmitChanges();
+            data.SaveChanges();
             Session["Giohang"] = null;
             return RedirectToAction("Xacnhandonhang", "Giohang");
 
