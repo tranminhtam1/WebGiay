@@ -84,3 +84,4 @@ C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.dll
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.SqlServer.dll
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.xml
 C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\bin\EntityFramework.SqlServer.xml
+C:\Users\tran minh tam\Desktop\WebGiay\WebGiay\obj\Debug\WebGiay.csproj.AssemblyReference.cache

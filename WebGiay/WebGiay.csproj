@@ -136,7 +136,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CongtygiayController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
+    <Compile Include="Controllers\HangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -286,6 +288,17 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Hang\Index.cshtml" />
+    <Content Include="Views\Hang\Detail.cshtml" />
+    <Content Include="Views\Hang\Delete.cshtml" />
+    <Content Include="Views\Hang\Create.cshtml" />
+    <Content Include="Views\Hang\Edit.cshtml" />
+    <Content Include="Views\Congtygiay\Index.cshtml" />
+    <Content Include="Views\Congtygiay\Detail.cshtml" />
+    <Content Include="Views\Congtygiay\Create.cshtml" />
+    <Content Include="Views\Congtygiay\Delete.cshtml" />
+    <Content Include="Views\Congtygiay\Edit.cshtml" />
+    <Content Include="Views\Product\UploadMultipleImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

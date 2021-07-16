@@ -20,35 +20,7 @@
 
    
 </style>
-@*<div class="container">
-    <div class="row">
-        @foreach (var giay in Model)
-        {
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <a href="@Url.Action("Details","ShopGiay", new { id = giay.Magiay})">
-                        <img alt="@giay.Tengiay" src="~/images/@giay.Anhbia" width="200" />
 
-                        <br />
-                        <h4 style="text-align:center">
-                            @giay.Tengiay
-                        </h4>
-                    </a>
-
-
-                    <h4 style="text-align:right">
-                        @giay.Giaban
-                    </h4>
-                    <p></p>
-                </div>
-
-
-            </div>
-
-
-        }
-    </div>
-</div>*@
 <div class="container">
     <div class="row">
         @foreach (var giay in Model)
@@ -63,7 +35,7 @@
                         <h4 style="text-align:center">
                             @giay.Tengiay
                         </h4>
-
+                    </a>
                 </div>
 
 
@@ -74,18 +46,11 @@
 
 
 
-            @*<h3 style="text-align:center; color:red">GIÀY HOT</h3>
-                <div class="row">
-                    <div class="col-sm-4 col-lg-4 col-md-4"  >
-                        <h4>
-                            <a href="#">Like this template?</a>
-                        </h4>
-                        <p> If you like<a target="_blank" href="https://www.google.com/"></a></p>
-                    </div>
-                </div>*@
+        
 
-
-            Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) /@Model.PageCount;
+<div>
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber) /@Model.PageCount
+</div>
 <div class="MenuTrang">
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
 </div>

@@ -70,20 +70,22 @@ namespace WebGiay.Controllers
             }
         }
 
-        // GET: Product/Edit/5
+        //GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            //edit có laasys data đâu???????????
+            GIAY gIAY = data.GIAYs.SingleOrDefault(p => p.Magiay == id);
+            return View(gIAY);
         }
 
-        // POST: Product/Edit/5
+        //POST: Product/Edit/5
         [HttpPost]
-        public ActionResult Edit(GIAY pro, HttpPostedFileBase file)
+        public ActionResult Edit(GIAY giay,HttpPostedFileBase file)
         {
-            try
+            GIAY giayUpdate = data.GIAYs.SingleOrDefault(p => p.Magiay == giay.Magiay);
+            if(giayUpdate != null)
             {
-                // TODO: Add update logic here
-                if (file.ContentLength > 0)
+                if (file != null || file.ContentLength > 0)
                 {
                     string _FileName = Path.GetFileName(file.FileName);
                     string path = Path.Combine(Server.MapPath("/images/"), _FileName);
@@ -96,18 +98,44 @@ namespace WebGiay.Controllers
                     {
                         file.SaveAs(path);
                     }
-                    pro.Anhbia = _FileName;
+
+                    giayUpdate.Anhbia = _FileName;
                 }
-                data.Entry(pro).State =EntityState.Modified;
+
+                giayUpdate.Tengiay = giay.Tengiay;
+                //may cot con lai tu viet o day
+
+                data.GIAYs.AddOrUpdate(giayUpdate);
                 data.SaveChanges();
-                return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+           
+            
+            return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        //public ActionResult UploadMultipleImage(HttpPostedFileBase[] files)
+        //{
+        //    foreach (HttpPostedFileBase file in files)
+        //    {
+        //        if(file != null || file.ContentLength > 0 )
+        //        {
+        //            string _FileName = Path.GetFileName(file.FileName);
+        //            string path = Path.Combine(Server.MapPath("/images/"), _FileName);
+        //            if (System.IO.File.Exists(path))
+        //            {
+        //                System.IO.File.Delete(path);
+        //                file.SaveAs(path);
+        //            }
+        //            else
+        //            {
+        //                file.SaveAs(path);
+        //            }
+
+        //        }
+        //    }
+        //    return RedirectToAction("Index");
+        //}
         // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
