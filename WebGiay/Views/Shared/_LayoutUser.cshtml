@@ -17,6 +17,27 @@
 
 </head>
 <body>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '506598613756786',
+                cookie: true,
+                xfbml: true,
+                version: 'v11.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 
 
@@ -32,14 +53,14 @@
                     @Html.ActionLink("ĐĂNG KÝ", "Dangky", "Nguoidung")
                 </p>
                 <p>
-                    @Html.ActionLink("THÔNG TIN", "Dangnhap", "Nguoidung")
+                    @Html.ActionLink("THÔNG TIN", "Contact", "Home")
                 </p>
 
                 <p>
                     @Html.ActionLink("TUYỂN DỤNG", "Dangnhap", "Nguoidung")
                 </p>
                 <p>
-                    @Html.ActionLink("LIÊN HỆ", "Dangnhap", "Nguoidung")
+                    @Html.ActionLink("LIÊN HỆ", "About", "Home")
                 </p>
                 <p>
                     @Html.ActionLink("ĐĂNG NHẬP", "Dangnhap", "Nguoidung")
@@ -117,8 +138,8 @@
             <br />
 
             <div class="tieudetrangchu">
-                <h1  class="tieudetrangchu">NEW ARRIVEL</h1>
-            <br />
+                <h1 class="tieudetrangchu">NEW ARRIVEL</h1>
+                <br />
 
                 <div>
                     @RenderBody()

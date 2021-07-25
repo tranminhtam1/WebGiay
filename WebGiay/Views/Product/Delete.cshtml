@@ -2,7 +2,7 @@
 
 @*@{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }*@
 
 <h2>Delete</h2>
@@ -38,6 +38,8 @@
 
         <dt>
             @Html.DisplayNameFor(model => model.Anhbia)
+            <img src="/images/@Model.Anhbia" style="height:150px;width:150px;margin:10px;" />
+            @*<img src="/images/@item.Anhbia" width="100" height="100" />*@
         </dt>
 
         <dd>

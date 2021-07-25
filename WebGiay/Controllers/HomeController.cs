@@ -19,6 +19,12 @@ namespace WebGiay.Controllers
 
             return View();
         }
+        public ActionResult xacnhanAbout()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
 
         public ActionResult Contact()
         {

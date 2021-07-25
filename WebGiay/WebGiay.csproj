@@ -140,6 +140,7 @@
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoMoController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShopGiayController.cs" />
@@ -158,6 +159,8 @@
     <Compile Include="Models\NHATHIETKE.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\THIETKEGIAY.cs" />
+    <Compile Include="Momo\MoMoSecurity.cs" />
+    <Compile Include="Momo\PaymentRequest.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -166,8 +169,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\adminlogin.css" />
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\structure.css" />
+    <Content Include="Content\css\thongtin.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
@@ -196,6 +201,8 @@
     <Content Include="images\module-bg.jpg" />
     <Content Include="images\module-bg1.jpg" />
     <Content Include="images\module-bg2.jpg" />
+    <Content Include="images\momo.png" />
+    <Content Include="images\momoăă.png" />
     <Content Include="images\PC1.jpg" />
     <Content Include="images\PC2.jpg" />
     <Content Include="images\PC3.jpg" />
@@ -286,7 +293,6 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
-    <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Hang\Index.cshtml" />
     <Content Include="Views\Hang\Detail.cshtml" />
@@ -299,9 +305,12 @@
     <Content Include="Views\Congtygiay\Delete.cshtml" />
     <Content Include="Views\Congtygiay\Edit.cshtml" />
     <Content Include="Views\Product\UploadMultipleImage.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Home\xacnhanAbout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MoMo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

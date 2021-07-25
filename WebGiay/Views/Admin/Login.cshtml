@@ -1,42 +1,42 @@
 ﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
 <head>
-    <title>Trang đăng nhập Admin</title>
-    <meta charset="UTF-8" />
-    <meta name="Designer" content="PremiumPixels.com">
-    <meta name="Author" content="$hekh@r d-Ziner, CSSJUNTION.com">
-   
-     <link href="~/Content/css/reset.css" rel="stylesheet" />
-     <link href="~/Content/css/structure.css" rel="stylesheet" />
-
-
+    @{
+        Layout = null;
+    }
+    <link href="~/Content/css/adminlogin.css" rel="stylesheet" />
 </head>
 <body>
-    <h4>ĐĂNG NHẬP HỆ THỐNG QUẢN TRỊ</h4>
-    <h4 style="color:red; text-align:center">@ViewBag.Thongbao</h4>
-    @using (Html.BeginForm())
-    { @Html.ValidationSummary(true)
-    <form class="box login">
-        <fieldset class="boxBody">
-            <label>Tài khoản</label>
-            <input type="text" name="username" tabindex="1" placeholder="" required> @ViewData["Loi1"]
-            <label><a href="#" class="rLink" tabindex="5">Quên mật khẩu?</a>Mật khẩu</label>
-            <input type="password" name="password" tabindex="2" required>@ViewData["Loi2"]
-        </fieldset>
-        <footer>
-            <label><input type="checkbox" tabindex="3">Lưu tài khoản cho lần sau </label>
-            <input type="submit" class="btnLogin" value="Login" tabindex="4">
-        </footer>
+    <form class="modal-content animate" method="post">
+        <div class="imgcontainer">
+
+            <img src="~/images/admin1.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for=""><b></b>Tài Khoản:</label>
+            <input type="text" placeholder="Enter Name" name="username" required>
+            <br />
+            <label for="psw"><b>Mật Khẩu:</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <br />
+
+            <button type="submit" value="Login" tabindex="4" style="width:auto;">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
     </form>
-    }
-    @*<footer id="main">
-        <a href="http://wwww.cssjunction.com">Simple Login Form (HTML5/CSS3 Coded) by CSS Junction</a> | <a href="http://www.premiumpixels.com">PSD by Premium Pixels</a>
-    </footer>*@
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
-</html>

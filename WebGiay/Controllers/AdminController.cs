@@ -42,6 +42,7 @@ namespace WebGiay.Controllers
                 {
                     Session["Taikhoanadmin"] = ad;
                     return RedirectToAction("Index", "Admin");
+                    //return RedirectToAction("_Layout", "Shared");
                 }
                 else
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";

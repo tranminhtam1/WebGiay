@@ -113,52 +113,81 @@ namespace WebGiay.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        //public ActionResult UploadMultipleImage(HttpPostedFileBase[] files)
+        //[HttpPost]
+        ////public ActionResult UploadMultipleImage(HttpPostedFileBase[] files)
+        ////{
+        ////    foreach (HttpPostedFileBase file in files)
+        ////    {
+        ////        if(file != null || file.ContentLength > 0 )
+        ////        {
+        ////            string _FileName = Path.GetFileName(file.FileName);
+        ////            string path = Path.Combine(Server.MapPath("/images/"), _FileName);
+        ////            if (System.IO.File.Exists(path))
+        ////            {
+        ////                System.IO.File.Delete(path);
+        ////                file.SaveAs(path);
+        ////            }
+        ////            else
+        ////            {
+        ////                file.SaveAs(path);
+        ////            }
+
+        ////        }
+        ////    }
+        ////    return RedirectToAction("Index");
+        ////}
+        //// GET: Product/Delete/5
+        //public ActionResult Delete(int id)
         //{
-        //    foreach (HttpPostedFileBase file in files)
-        //    {
-        //        if(file != null || file.ContentLength > 0 )
-        //        {
-        //            string _FileName = Path.GetFileName(file.FileName);
-        //            string path = Path.Combine(Server.MapPath("/images/"), _FileName);
-        //            if (System.IO.File.Exists(path))
-        //            {
-        //                System.IO.File.Delete(path);
-        //                file.SaveAs(path);
-        //            }
-        //            else
-        //            {
-        //                file.SaveAs(path);
-        //            }
+        //   return View(data.GIAYs.Where(s => s.Magiay == id).FirstOrDefault());
 
-        //        }
-        //    }
-        //    return RedirectToAction("Index");
         //}
-        // GET: Product/Delete/5
+
+        //// POST: Product/Delete/5
+        //[HttpPost]
+        //public ActionResult Delete(int id, GIAY pro)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
+        //    pro= data.GIAYs.Where(s => s.Magiay == id).FirstOrDefault();
+        //        data.GIAYs.Remove(pro);
+        //        data.SaveChanges();
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         public ActionResult Delete(int id)
-        {
-           return View(data.GIAYs.Where(s => s.Magiay == id).FirstOrDefault());
 
-        }
-
-        // POST: Product/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, GIAY pro)
         {
-            try
+            dbQLBanGiayDataContext data = new dbQLBanGiayDataContext();
+
+            //{   if (Session["Taikhoanadmin"] == null)
+            //        return RedirectToAction("Login", "Admin");
+            // else
             {
-                // TODO: Add delete logic here
-            pro= data.GIAYs.Where(s => s.Magiay == id).FirstOrDefault();
-                data.GIAYs.Remove(pro);
-                data.SaveChanges();
-
-                return RedirectToAction("Index");
+                var giay = from l in data.GIAYs where l.Magiay == id select l;
+                return View(giay.SingleOrDefault());
             }
-            catch
+        }
+        [HttpPost, ActionName("Delete")]
+
+        public ActionResult Xacnhanxoa(int id)
+        {
+
+            //{   if (Session["Taikhoanadmin"] == null)
+            //        return RedirectToAction("Login", "Admin");
+            // else
             {
-                return View();
+                GIAY giay = data.GIAYs.SingleOrDefault(n => n.Magiay == id);
+                data.GIAYs.Remove(giay);
+                data.SaveChanges();
+                //rồi đó thay con nua thay oi cho nay ne
+                return RedirectToAction("Index", "Hang");
             }
         }
     }

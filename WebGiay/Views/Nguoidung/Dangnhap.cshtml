@@ -28,16 +28,29 @@
                 @ViewData["Loi2"]
             </td>
         </tr>
-     
-      
-        <tr style="height:40px">
-            <td></td>
-            <td>
-                <input type="Submit" value="Đăng nhập" />
-            </td>
-        </tr>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Đăng Nhập" class="btn btn-default" />
+
+
+                <fb:login-button scope="public_profile,email"
+                                 onlogin="checkLoginState();">
+                </fb:login-button>
+            </div>
+        </div>
 
     }
 </table>
+<script>
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            var a = response;
+        });
+    }
+
+</script>
+
 
 

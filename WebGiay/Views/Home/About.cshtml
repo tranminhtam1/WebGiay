@@ -1,7 +1,72 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tạo Contact Form</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+
+        <link href="~/Content/css/contact.css" rel="stylesheet" />
+    </head>
+    <body>
+        <section>
+            <div class="container">
+                <div class="containerinfo">
+                    <div>
+                        <h2>Thông Tin Liên Hệ</h2>
+                        <ul class="info">
+                            <li>
+                                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                <span>
+                                    475 Điện Biên Phủ
+                                    Quận Bình Thạnh,
+                                    Thành Phố Hồ Chí Minh
+                                </span>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                <span>anhtuan2704222@gmail.com</span>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                                <span>094-126-6067</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="sci">
+                        <li><a href="https://www.facebook.com/hihi2704/"><i class="fa fa-facebook" aria-hidden="true"></i>  FaceBook</a></li>
+                        <li><a href="https://www.instagram.com/_moody.00_/"><i class="fa fa-instagram" aria-hidden="true"></i>  Instagram</a></li>
+                    </ul>
+                </div>
+        </section>
+    </body>
+    </html>*@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/css/thongtin.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="form">
+        <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+        <form action="" id="form1">
+            <input type="text" id="fname" name="fname" placeholder="Họ tên"><br>
+            <input type="text" id="femail" name="femail" placeholder="Địa chỉ Email"><br>
+            <input type="text" id="fcontent" name="fcontent" placeholder="Nội dung yêu cầu"><br>
+
+            @Html.ActionLink("Gửi yêu cầu", "xacnhanAbout", "Home")
+
+            @*<input type="submit" value="Gửi yêu cầu">*@
+        </form>
+    </div>
+</body>
+</html>
